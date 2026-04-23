@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: #161616;
+  --border: #222222;
+  --blue: #2563eb;
+  --blue-muted: #1d4ed8;
+  --text-primary: #f0f0f0;
+  --text-muted: #666666;
+  --text-accent: #2563eb;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.dashboard {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.dashboard-header {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+}
+
+.dashboard-subtitle {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-title {
+  font-size: 3rem;
+  color: var(--text-primary);
+  letter-spacing: 0.08em;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: padding-left 0.2s ease;
+}
+
+.project-card:hover {
+  padding-left: 0.5rem;
+}
+
+.project-name {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.priority-badge {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+.back-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.back-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--blue);
+}
+
+.markdown-body {
+  color: var(--text-primary);
+  line-height: 1.8;
+}
+
+.markdown-body h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.markdown-body h2 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.markdown-body h3 {
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--blue);
+  letter-spacing: 0.1em;
+}
+
+.markdown-body p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.75rem;
+}
+
+.markdown-body th {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--blue);
+  color: var(--blue);
+  letter-spacing: 0.15em;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.markdown-body td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  vertical-align: top;
+}
+
+.markdown-body ul, .markdown-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body li {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.markdown-body blockquote {
+  border-left: 2px solid var(--blue);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.markdown-body code {
+  background: var(--bg-card);
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  color: var(--blue);
+  border: 1px solid var(--border);
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.save-btn {
+  background: var(--blue);
+  border: none;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+  background: var(--blue-muted);
+}
+
+.save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editor {
+  width: 100%;
+  height: calc(100vh - 150px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  padding: 1.5rem;
+  resize: none;
+  outline: none;
+}
+
+.impulse-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.form-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  padding: 0.85rem 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--blue);
+}
+
+.form-textarea {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  padding: 0.85rem 1rem;
+  outline: none;
+  resize: none;
+  height: 120px;
+  line-height: 1.6;
+  transition: border-color 0.2s ease;
+}
+
+.form-textarea:focus {
+  border-color: var(--blue);
+}
+
+.full-width {
+  width: 100%;
+  padding: 1rem;
+  font-size: 0.7rem;
+}
+
