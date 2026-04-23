@@ -10,7 +10,7 @@ const headers = {
 // READ a file from GitHub
 export async function readFile(path) {
   const res = await fetch(
-    `/api/github/repos/${owner}/${repo}/contents/${path}`,
+    `/api/repos/${owner}/${repo}/contents/${path}`,
     { headers }
   );
   const data = await res.json();
@@ -22,7 +22,7 @@ export async function writeFile(path, content, message) {
   let sha;
   try {
     const res = await fetch(
-      `/api/github/repos/${owner}/${repo}/contents/${path}`,
+      `/api/repos/${owner}/${repo}/contents/${path}`,
       { headers }
     );
     const data = await res.json();
@@ -31,7 +31,7 @@ export async function writeFile(path, content, message) {
     sha = undefined;
   }
 
-  await fetch(`/api/github/repos/${owner}/${repo}/contents/${path}`, {
+  await fetch(`/api/repos/${owner}/${repo}/contents/${path}`, {
     method: "PUT",
     headers,
     body: JSON.stringify({
@@ -50,7 +50,7 @@ export async function writeJSON(path, data, message) {
 // LIST files in a folder
 export async function listFiles(path) {
   const res = await fetch(
-    `/api/github/repos/${owner}/${repo}/contents/${path}`,
+    `/api/repos/${owner}/${repo}/contents/${path}`,
     { headers }
   );
   const data = await res.json();

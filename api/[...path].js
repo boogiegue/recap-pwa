@@ -1,9 +1,9 @@
 export default async function handler(req, res) {
   const token = process.env.VITE_GITHUB_TOKEN;
   
-  const path = req.query.path ? '/' + req.query.path.join('/') : '';
-  const queryString = req.url.includes('?') ? '?' + req.url.split('?')[1] : '';
-  const githubUrl = `https://api.github.com${path}${queryString}`;
+  // Build the GitHub API URL from the request path
+  const githubPath = req.url.replace('/api/github', '');
+  const githubUrl = `https://api.github.com${githubPath}`;
 
   const response = await fetch(githubUrl, {
     method: req.method,
