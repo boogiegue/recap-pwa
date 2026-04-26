@@ -2,6 +2,7 @@ import { useState } from "react";
 import Dashboard from "./Dashboard";
 import ProjectView from "./ProjectView";
 import ImpulseCapture from "./ImpulseCapture";
+import WeeklyRecap from "./WeeklyRecap";
 
 export default function App() {
   const [currentView, setCurrentView] = useState("dashboard");
@@ -23,6 +24,7 @@ export default function App() {
         <Dashboard
           onSelectProject={openProject}
           onImpulse={() => setCurrentView("impulse")}
+          onRecap={() => setCurrentView("recap")}
         />
       )}
       {currentView === "project" && (
@@ -30,6 +32,9 @@ export default function App() {
       )}
       {currentView === "impulse" && (
         <ImpulseCapture onBack={goBack} />
+      )}
+      {currentView === "recap" && (
+        <WeeklyRecap onBack={goBack} />
       )}
     </div>
   );

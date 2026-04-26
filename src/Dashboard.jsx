@@ -28,7 +28,7 @@ const priorityColor = {
   4: "#374151",
 };
 
-export default function Dashboard({ onSelectProject, onImpulse }) {
+export default function Dashboard({ onSelectProject, onImpulse, onRecap }) {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
